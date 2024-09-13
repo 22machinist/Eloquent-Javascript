@@ -171,6 +171,31 @@ function phi(table) {
     return (table[3] * table[0] - table[2] * table[1]) / Math.sqrt((table[2] + table[3]) * (table[0] + table[1]) * (table[1] + table[3]) * (table[0] + table[2]));
 }
 
+function phi2([n00, n01, n10, n11]) {
+    return (n11 * n00 - n10 * n01) / Math.sqrt((n10 + n11) * (n00 + n01) * (n01 + n11) * (n00 + n01));
+}
+
+
+//Now let us some tricks that work for object
+let { name } = {
+    name: "Ashu",
+    age: 23
+};
+
+console.log(name);
+
+//Now let us understand about JSON today 
+//To convert normal string into JSON
+let string = JSON.stringify({
+    squirrel: false,
+    events: ["weekend"]
+});
+
+console.log(string);
+//To convert from json to javascript
+console.log(JSON.parse(string));
+
+
 
 
 
