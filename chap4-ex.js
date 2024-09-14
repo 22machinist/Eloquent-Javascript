@@ -78,3 +78,39 @@ function reverseArrayInPlace(arr) {
 
 let q = [6, 7, 8, 9, 10];
 console.log(reverseArrayInPlace(arr));
+
+// Define a class for a node in the linked list
+class ListNode {
+    constructor(value) {
+        this.value = value; // store the value of the node
+        this.next = null; // pointer to the next node (initially null)
+    }
+}
+
+// Function to convert array into a linked list
+function arrayToList(arr) {
+    if (arr.length === 0) {
+        return null; // return null if array is empty
+    }
+
+    // Create the head (first node) of the list
+    let head = new ListNode(arr[0]);
+
+    // Keep track of the current node
+    let current = head;
+
+    // Iterate through the array and create new nodes
+    for (let i = 1; i < arr.length; i++) {
+        current.next = new ListNode(arr[i]); // create a new node and link it
+        current = current.next; // move to the newly created node
+    }
+
+    return head; // return the head of the linked list
+}
+
+// Example usage:
+let arr = [1, 2, 3, 4, 5];
+let list = arrayToList(arr);
+
+console.log(list);
+
